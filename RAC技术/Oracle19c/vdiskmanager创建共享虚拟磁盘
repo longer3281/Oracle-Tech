@@ -1,0 +1,8 @@
+cmd进入命令行，进入wvmware软件安装目录，cd D:\Program Files (x86)\VMware\VMware Workstation, 
+
+vmware-vdiskmanager.exe -c -s 10240Mb -a lsilogic -t 2 J:\VMWare17\SharedDisks\asmocr1.vmdk
+vmware-vdiskmanager.exe -c -s 10240Mb -a lsilogic -t 2 J:\VMWare17\SharedDisks\asmocr2.vmdk
+vmware-vdiskmanager.exe -c -s 10240Mb -a lsilogic -t 2 J:\VMWare17\SharedDisks\asmocr3.vmdk
+vmware-vdiskmanager.exe -c -s 20480Mb -a lsilogic -t 2 J:\VMWare17\SharedDisks\asmdat1.vmdk
+vmware-vdiskmanager.exe -c -s 20480Mb -a lsilogic -t 2 J:\VMWare17\SharedDisks\asmdat2.vmdk
+vmware-vdiskmanager.exe -c -s 16384Mb -a lsilogic -t 2 J:\VMWare17\SharedDisks\fradat1.vmdk
