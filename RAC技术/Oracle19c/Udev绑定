@@ -1,0 +1,21 @@
+此脚本适用于: RHEL-7.X/ Oracle-Linux-7.X
+
+可以通过如下脚本生成udev设备绑定脚本
+for i in 'b:asmocr1' 'c:asmocr2' 'd:asmocr3' 'e:asmdat1' 'f:asmdat2' 'g:asmfra1';
+do
+dk1=${i%:*}
+dk2=${i#*:}
+echo "$dk1 --- $dk2"
+echo "KERNEL==\"sd*\", SUBSYSTEM==\"block\", PROGRAM==\"/usr/lib/udev/scsi_id -u -g -d /dev/\$name\", RESULT==\"`/usr/lib/udev/scsi_id -g -u --device=/dev/sd$dk1`\", SYMLINK+=\"${dk2}\", OWNER=\"grid\", GROUP=\"asmadmin\", MODE=\"0660\"" >> /etc/udev/rules.d/99-oracle-asmdevices.rules
+done
+
+----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+生成 /etc/udev/rules.d/99-oracle-asmdevices.rules 脚本文件：
+KERNEL=="sd*", SUBSYSTEM=="block", PROGRAM=="/usr/lib/udev/scsi_id -u -g -d /dev/$name", RESULT=="36000c2978c6a028fb1f11d26f1081810", SYMLINK+="asmocr1", OWNER="grid", GROUP="asmadmin", MODE="0660"
+KERNEL=="sd*", SUBSYSTEM=="block", PROGRAM=="/usr/lib/udev/scsi_id -u -g -d /dev/$name", RESULT=="36000c296234cdfd097244f05649d5d32", SYMLINK+="asmocr2", OWNER="grid", GROUP="asmadmin", MODE="0660"
+KERNEL=="sd*", SUBSYSTEM=="block", PROGRAM=="/usr/lib/udev/scsi_id -u -g -d /dev/$name", RESULT=="36000c291e8893aed53d0f72ad7fdf7b0", SYMLINK+="asmocr3", OWNER="grid", GROUP="asmadmin", MODE="0660"
+KERNEL=="sd*", SUBSYSTEM=="block", PROGRAM=="/usr/lib/udev/scsi_id -u -g -d /dev/$name", RESULT=="36000c29f32dbeb6ddb2751e92bf99a94", SYMLINK+="asmdat1", OWNER="grid", GROUP="asmadmin", MODE="0660"
+KERNEL=="sd*", SUBSYSTEM=="block", PROGRAM=="/usr/lib/udev/scsi_id -u -g -d /dev/$name", RESULT=="36000c29d7fddb3a760cc06cb4851154c", SYMLINK+="asmdat2", OWNER="grid", GROUP="asmadmin", MODE="0660"
+KERNEL=="sd*", SUBSYSTEM=="block", PROGRAM=="/usr/lib/udev/scsi_id -u -g -d /dev/$name", RESULT=="36000c29ea814455e54f66d345611bee6", SYMLINK+="asmfra1", OWNER="grid", GROUP="asmadmin", MODE="0660"
+
+
