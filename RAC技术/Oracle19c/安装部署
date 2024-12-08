@@ -17,13 +17,8 @@ groupadd -g 1026 backupdba
 groupadd -g 1027 dgdba
 groupadd -g 1028 kmdba 
 
-
-
 useradd -u 1010 -g oinstall -G asmadmin,asmdba,asmoper,dba,racdba  grid
 useradd -u 1011 -g oinstall -G dba,oper,backupdba,dgdba,kmdba,asmdba,racdba oracle
-
-usermod -aG backupdba oracle
-
 
 echo "oracle"|passwd --stdin grid
 echo "oracle"|passwd --stdin oracle
