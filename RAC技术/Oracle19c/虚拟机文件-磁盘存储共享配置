@@ -1,0 +1,43 @@
+
+scsi1:0.deviceType = "disk"
+scsi1:0.filename = "J:\VMWare17\ShareDisks\asmocr1.vmdk"
+scsi1:0.mode = "independent-persistent"
+scsi1:0.present = "TRUE"
+
+scsi1:1.deviceType = "disk"
+scsi1:1.filename = "J:\VMWare17\ShareDisks\asmocr2.vmdk"
+scsi1:1.mode = "independent-persistent"
+scsi1:1.present = "TRUE"
+
+scsi1:2.deviceType = "disk"
+scsi1:2.filename = "J:\VMWare17\ShareDisks\asmocr3.vmdk"
+scsi1:2.mode = "independent-persistent"
+scsi1:2.present = "TRUE"
+
+scsi1:3.deviceType = "disk"
+scsi1:3.filename = "J:\VMWare17\ShareDisks\asmdata1.vmdk"
+scsi1:3.mode = "independent-persistent"
+scsi1:3.present = "TRUE"
+
+scsi1:4.deviceType = "disk"
+scsi1:4.filename = "J:\VMWare17\ShareDisks\asmdata2.vmdk"
+scsi1:4.mode = "independent-persistent"
+scsi1:4.present = "TRUE"
+
+scsi1:5.deviceType = "disk"
+scsi1:5.filename = "J:\VMWare17\ShareDisks\fradata.vmdk"
+scsi1:5.mode = "independent-persistent"
+scsi1:5.present = "TRUE"
+ 
+scsi1.present ="TRUE"
+scsi1.shared="TRUE"
+scsi1.virtualDev ="lsilogic"
+scsi1.sharedBus = "virtual"
+
+disk.EnableUUID ="TRUE"
+disk.locking = "false"
+diskLib.dataCacheMaxSize = "0"
+diskLib.dataCacheMaxReadAheadSize = "0"
+diskLib.DataCacheMinReadAheadSize = "0"
+diskLib.dataCachePageSize = "4096"
+diskLib.maxUnsyncedWrites = "0"
